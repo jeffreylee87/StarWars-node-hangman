@@ -66,8 +66,8 @@ var start = function () {
                         console.log(starwarMe());
                         console.log("DARTH VADER KILLED YOU. GAME OVER!!!!");
                         console.log(`\n❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗\n`);
-                        keepPlaying();
-                        // process.exit();
+                        process.exit();
+                        
                     }
 
                 } else {
@@ -84,7 +84,7 @@ var start = function () {
                         console.log("Midichlorian Count is off the charts! You Won!!!!!!");
                         console.log(player.array.join(" "));
                         console.log(`\n🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉\n`);
-                        keepPlaying();
+                        process.exit();
                     }
 
                 }
@@ -94,20 +94,20 @@ var start = function () {
         //ask initial question to start game
         ask();
         //function to continue playing
-        function keepPlaying() {
-            inquirer.prompt([{
-                type: "list",
-                name: "ask",
-                message: "Would you like to continue your Jedi training?",
-                choices: ["Yes", "No"]
-            }]).then(function (ans) {
-                if (ans.ask === "Yes") {
-                    start();
-                } else {
-                    process.exit();
-                }
-            });
-        }
+        // function keepPlaying() {
+        //     inquirer.prompt([{
+        //         type: "list",
+        //         name: "ask",
+        //         message: "Would you like to continue your Jedi training?",
+        //         choices: ["Yes", "No"]
+        //     }]).then(function (ans) {
+        //         if (ans.ask === "Yes") {
+        //             start();
+        //         } else {
+        //             process.exit();
+        //         }
+        //     });
+        // }
 
     });
 };
